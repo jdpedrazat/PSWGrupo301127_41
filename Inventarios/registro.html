@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>PC Electronics</title>
+  </head>
+  <body>
+    <h1>PC Electronics</h1>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Inventarios
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item active" href="../Inventarios/registro.html">Registro</a></li>
+                <li><a class="dropdown-item" href="../Inventarios/editar.html">Editar p.</a></li>
+                <li><a class="dropdown-item" href="../Inventarios/inventario.html">Inventario</a></li>
+                <li><a class="dropdown-item" href="../Inventarios/eliminar.html">Eliminar</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Utilidades
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="../Utilidades/CalcularVenta.html">Calcular Venta</a></li>
+                <li><a class="dropdown-item" href="../Utilidades/ConvertirDatos.html">Convertir Equivalencia</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Administrador</a>
+            </li>
+          </ul>
+          <!--<form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>-->
+        </div>
+      </div>
+    </nav>
+
+ <!-- En este formulario se va a registrar los productos que van a la base de datos del inventario -->
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="well well-sm">
+              <form class="form-horizontal" method="post" action="">
+                  <fieldset>
+                    <p></p>
+                      <h2>Registro de Productos</h2>
+                      <p></p>
+                      <div class="form-group">
+                          <span class="col-md-2 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                          <div class="col-md-8">
+                              <input id="fname" name="name" type="number" placeholder="Código de Barras" class="form-control">
+                          </div>
+                      </div>
+                      <p></p>
+                      <div class="form-group">
+                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                          <div class="col-md-8">
+                              <input id="lname" name="name" type="text" placeholder="Nombre producto " class="form-control">
+                          </div>
+                      </div>
+                      <p></p>
+                      <div class="form-group">
+                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                          <div class="col-md-8">
+                            <label for=""> fecha de compra</label>
+                              <input id="date" name="date" type="date" placeholder="Fecha de compra " class="form-control clickable input-md">
+                          </div>
+                      </div>
+                      <p></p>
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                        <div class="col-md-8">
+                            <input id="compra" name="compra" type="number" placeholder="Valor de Compra " class="form-control">
+                        </div>
+                    </div>
+                    <p></p>
+                      <div class="form-group">
+                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                          <div class="col-md-8">
+                              <input id="ganancia" name="ganancia" type="number" placeholder="Porcentaje de ganancia " class="form-control">
+                          </div>
+                      </div>
+                      <p></p>
+                      <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                        <div class="col-md-8">
+                            <input id="cantidad" name="cantidad" type="number" placeholder="Cantidad de Productos " class="form-control">
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class="form-group">
+                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                      <div class="col-md-8">
+                          <input id="Proveedor " name="Proveedor " type="text" placeholder="Proveedor  de Productos " class="form-control">
+                      </div>
+                  </div>
+                    <p></p>
+                    <div class="form-group">
+                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                      <div class="col-md-8">
+                        <select name="origen" class="form-control">
+                          <option value="">origen</option> 
+                          <option value="2">Nacional</option> 
+                          <option value="3">Importado</option>
+                       </select>
+                      </div>
+                  </div>
+                  <p></p>
+
+                      <div class="form-group">
+                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                          <div class="col-md-8">
+                              <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Por favor ingrese la descripción de producto ." rows="7"></textarea>
+                          </div>
+                      </div>
+                      <p></p>
+                      <div class="form-group">
+                          <div class="col-md-12 text-center">
+                              <button type="submit" class="btn btn-outline-success">Guardar</button>
+                          </div>
+                      </div>
+                  </fieldset>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+  </body>
+</html>
