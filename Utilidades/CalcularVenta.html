@@ -12,7 +12,11 @@
   </head>
   <body>
     <h1>PC Electronics</h1>
-
+    <script>
+      function CalculaVenta(){
+        var valor_neto = document.f1.valor_neto.value
+      }
+    </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -63,11 +67,28 @@
         </div>
       </div>
     </nav>
-
+  
     <!--inicio de formularios-->
     <div class="container">
         <!-- Content here -->
-        
+        <form name="FormularioVenta" action="CalcularVenta.html" method="post">
+          <div class="form-group">
+            <label for="valorcompra">Valor de Compra: </label>
+            <input type="text" class="form-control" id="valor_neto" placeholder="Ingrese el valor de la venta"> 
+            <br>
+            <label for="utilidad">Porcentaje Utilidad o Ganancia: </label>
+            <input type="text" class="form-control" id="porcentaje_utilidad" placeholder="Ingrese el porcentaje de la ganancia o utilidad"> 
+            <br>
+            <label for="impuesto">Porcentaje IVA</label>
+            <input type="text" class="form-control" id="porentaje_impuesto" placeholder="Ingrese el valor del impuesto">
+            <br>
+            <button type="submit" onclick="CalculaVenta()" class="btn btn-primary">Calcular</button>
+            <br>
+            <label for="totalventa">Valor de Venta: </label>
+            <input type="text" class="form-control" id="valor_venta"> 
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+          </div>
+        </form>
       </div>
       
   </body>
