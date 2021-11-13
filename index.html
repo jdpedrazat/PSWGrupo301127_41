@@ -23,7 +23,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
-    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Home</a>
@@ -52,8 +51,13 @@
                 <li><a class="dropdown-item" href="Utilidades/ConvertirDatos.html">Convertir Equivalencia</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Administrador</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrador</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="Administrador/crearbase.php">Crear Base</a></li>
+                <li><a class="dropdown-item" href="Administrador/creartablas.php">Crear Tablas</a></li>
+                </li>
+              </ul>
             </li>
           </ul>
           <!--<form class="d-flex">
