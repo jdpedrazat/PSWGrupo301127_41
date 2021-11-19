@@ -1,10 +1,13 @@
 <?php
-    $servidor = "localhost";
+    /*$servidor = "localhost";
     $nombreusuario = "root";
-    $password = "12345678";
+    $password = "12345678";*/
+    require('config.php');
 
     // Crear connection
     $conexion = new mysqli($servidor, $nombreusuario, $password);
+    echo "<a href='../index.html' text-aling='center'> Volver</a>";
+    echo "<br>";
 
     // Check connection
     if ($conexion->connect_error){

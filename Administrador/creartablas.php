@@ -1,9 +1,5 @@
 <?php
-    
-    $servidor = "localhost";
-    $nombreusuario = "root";
-    $password = "12345678";
-    $dbnombre = "bdunad301127_14";
+    require('config.php');
     
     // Crear connection
     $conexion = new mysqli($servidor, $nombreusuario, $password, $dbnombre);
