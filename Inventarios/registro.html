@@ -38,7 +38,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item active" href="../Inventarios/registro.html">Registro</a></li>
-                <li><a class="dropdown-item" href="../Inventarios/editar.html">Editar p.</a></li>
+                <li><a class="dropdown-item" href="../Inventarios/editar.html">Editar</a></li>
                 <li><a class="dropdown-item" href="../Inventarios/inventario.html">Inventario</a></li>
                 <li><a class="dropdown-item" href="../Inventarios/eliminar.html">Eliminar</a></li>
               </ul>
@@ -75,7 +75,7 @@
   <div class="row">
       <div class="col-md-12">
           <div class="well well-sm">
-              <form class="form-horizontal" method="post" action="">
+              <form class="form-horizontal" method="post" action="php/registro.php">
                   <fieldset>
                     <p></p>
                       <h2>Registro de Productos</h2>
@@ -83,14 +83,14 @@
                       <div class="form-group">
                           <span class="col-md-2 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                           <div class="col-md-8">
-                              <input id="fname" name="name" type="number" placeholder="Código de Barras" class="form-control">
+                              <input id="barcode" name="name" type="number" placeholder="Código de Barras" class="form-control">
                           </div>
                       </div>
                       <p></p>
                       <div class="form-group">
                           <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                           <div class="col-md-8">
-                              <input id="lname" name="name" type="text" placeholder="Nombre producto " class="form-control">
+                              <input id="nombreproducto" name="nombreproducto" type="text" placeholder="Nombre producto " class="form-control">
                           </div>
                       </div>
                       <p></p>
@@ -98,14 +98,14 @@
                           <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                           <div class="col-md-8">
                             <label for=""> fecha de compra</label>
-                              <input id="date" name="date" type="date" placeholder="Fecha de compra " class="form-control clickable input-md">
+                              <input id="fechacompra" name="date" type="date" placeholder="Fecha de compra " class="form-control clickable input-md">
                           </div>
                       </div>
                       <p></p>
                       <div class="form-group">
                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                         <div class="col-md-8">
-                            <input id="compra" name="compra" type="number" placeholder="Valor de Compra " class="form-control">
+                            <input id="valorcompra" name="compra" type="number" placeholder="Valor de Compra " class="form-control">
                         </div>
                     </div>
                     <p></p>
@@ -126,34 +126,32 @@
                     <div class="form-group">
                       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                       <div class="col-md-8">
-                          <input id="Proveedor " name="Proveedor " type="text" placeholder="Proveedor  de Productos " class="form-control">
+                          <input id="Proveedor" name="Proveedor " type="text" placeholder="Proveedor  de Productos " class="form-control">
                       </div>
                   </div>
                     <p></p>
                     <div class="form-group">
                       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                       <div class="col-md-8">
-                        <select name="origen" class="form-control">
-                          <option value="">origen</option> 
+                        <select name="origen" id="origen" class="form-control">
                           <option value="2">Nacional</option> 
                           <option value="3">Importado</option>
                        </select>
                       </div>
                   </div>
                   <p></p>
-
-                      <div class="form-group">
-                          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                          <div class="col-md-8">
-                              <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Por favor ingrese la descripción de producto ." rows="7"></textarea>
-                          </div>
+                  <div class="form-group">
+                      <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                      <div class="col-md-8">
+                          <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Por favor ingrese la descripción de producto ." rows="7"></textarea>
                       </div>
-                      <p></p>
-                      <div class="form-group">
-                          <div class="col-md-12 text-center">
-                              <button type="submit" class="btn btn-outline-success">Guardar</button>
-                          </div>
+                  </div>
+                  <p></p>
+                  <div class="form-group">
+                      <div class="col-md-12 text-center">
+                          <button type="submit" class="btn btn-outline-success">Guardar</button>
                       </div>
+                  </div>
                   </fieldset>
               </form>
           </div>

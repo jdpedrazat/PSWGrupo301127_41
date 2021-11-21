@@ -1,34 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Crear Tabla</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
 <?php
     require('config.php');
     
     // Crear connection
     $conexion = new mysqli($servidor, $nombreusuario, $password, $dbnombre);
-    echo "<a href='../index.html' text-aling='center'> Volver</a>";
-    echo "<br>";
-    // Check connection
-    if ($conexion->connect_error){
-        die("Error de conexión al Servidor: " . $conexion->connect_error);
-        echo "<a href='../index.html'> Volver</a>";
-    }
-
-    //Crear Tabla
-    $sql = "CREATE TABLE productos (
-        id SMALLINT auto_increment PRIMARY KEY,
-        codigobarras VARCHAR(40),
-        nombre VARCHAR(60) NOT NULL,
-        fechaalta TIMESTAMP,
-        valorneto DOUBLE,
-        ganancia FLOAT,
-        cantidad int,
-        proveedor SMALLINT,
-        descripcion BLOB)
-        ";
-    if($conexion->query($sql) === true){
-        echo "Tabla creada satisfactoriamente...";
-    }else{
-        die("Error al Tabla en la Base de Datos" . $conexion->error);
-    }
-    //cerrar conexión
-    mysqli_close($conexion);
-    
 ?>
+
+<!--The Modal-->
+<div class="modal-dialog">
+    <div class="modal-content">
+        <!--Modal Content-->
+        <div class="modal-header">
+            <h4 class="modal-title">Información</h4>
+            <button class="close" onclick="location.href='../index.html'">&times;</button>
+        </div>
+
+        <!--Modal Content-->
+        <div class="modal-body">
+            <?php
+            // Check connection
+            if ($conexion->connect_error){
+            die("Error de conexión al Servidor: " . $conexion->connect_error);}
+
+            //Crear Tabla
+            $sql = "CREATE TABLE productos (
+                id SMALLINT auto_increment PRIMARY KEY,
+                codigobarras VARCHAR(40),
+                nombre VARCHAR(60) NOT NULL,
+                fechaalta TIMESTAMP,
+                valorneto DOUBLE,
+                ganancia FLOAT,
+                cantidad int,
+                proveedor VARCHAR(60),
+                origen  varchar(10),
+                descripcion BLOB)
+                ";
+            if($conexion->query($sql) === true){
+                echo "Tabla creada satisfactoriamente...";
+            }else{
+                echo die("Error al crear Tabla en la Base de Datos: " . $conexion->error);
+            }
+            //cerrar conexión
+            mysqli_close($conexion);
+            ?>
+        </div>
+        
+        <!--Modal footer-->
+        <div class="modal-footer">
+            <button class="btn btn-danger" onclick="location.href='../index.html'">Cerrar</button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

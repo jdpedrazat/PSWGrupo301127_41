@@ -16,8 +16,6 @@
 <?php
 
 // variables
-echo "<a href='../index.html' text-aling='center'> Volver</a>";
-echo "<br>";
 
 date_default_timezone_set("America/Bogota");
 require('config.php');
@@ -127,7 +125,6 @@ case 2:
     <?php
         echo 'Se ha producido un error de exportación, compruebe la siguiente información: <br/><br/><table><tr><td>Nombre de la base de datos:</td><td><b>' .$dbnombre .'</b></td></tr><tr><td>Nombre de usuario MySQL:</td><td><b>' .$nombreusuario .'</b></td></tr><tr><td>Contraseña MySQL:</td><td><b> '.$password.' </b></td></tr><tr><td>Nombre de host MySQL:</td><td><b>' .$servidor .'</b></td></tr></table>';
     ?>
-
 
         </div>
         
