@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>PC Electronics</title>
+    
     <style>
       input:invalid {
         border: 1px dashed red;
@@ -17,8 +18,10 @@
         border: 1px solid gray;
       }
     </style>
+
   </head>
   <body>
+    
     <h1>PC Electronics</h1>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -45,8 +48,8 @@
                 Inventarios
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item active" href="../Inventarios/registro.html">Registro</a></li>
-                <li><a class="dropdown-item" href="../Inventarios/editar.php">Editar</a></li>
+                <li><a class="dropdown-item" href="../Inventarios/registro.html">Registrar</a></li>
+                <li><a class="dropdown-item  active" href="#">Editar</a></li>
                 <li><a class="dropdown-item" href="../Inventarios/inventario.html">Inventario</a></li>
                 <li><a class="dropdown-item" href="../Inventarios/eliminar.html">Eliminar</a></li>
               </ul>
@@ -69,51 +72,44 @@
               </ul>
             </li>
           </ul>
-          <!--<form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>-->
         </div>
       </div>
     </nav>
 
- <!-- En este formulario se va a registrar los productos que van a la base de datos del inventario -->
-
-<div class="container">
-  <div class="row">
-      <div class="col-md-12">
-          <div class="well well-sm">
-              <form class="form-horizontal" method="post" action="php/registro.php">
-                  <fieldset>
-                    <p></p>
-                      <h2>Registro de Productos</h2>
-                      <p></p>
-                      <div class="form-group">
-                          <div class="col-md-8 col-md-offset-2 text-center">
-                            <input id="barcode" name="barcode" type="text" placeholder="Código de Barras" class="form-control" required><p></p>
-                            <input id="nombreproducto" name="nombreproducto" type="text" placeholder="Nombre producto " class="form-control" required><p></p>
-                            <input id="fechacompra" name="fechacompra" type="date" placeholder="Fecha de compra " class="form-control clickable input-md"><p></p>
-                            <input id="valorcompra" name="valorcompra" type="number" placeholder="Valor de Compra " class="form-control"><p></p>
-                            <input id="ganancia" name="ganancia" type="number" placeholder="Porcentaje de ganancia " class="form-control"><p></p>
-                            <input id="cantidad" name="cantidad" type="number" placeholder="Cantidad de Productos " class="form-control"><p></p>
-                            <input id="Proveedor" name="proveedor" type="text" placeholder="Proveedor  de Productos " class="form-control"><p></p>
-                            <select name="origen" id="origen" class="form-control" aria-placeholder="Selecciona un Item..." required><p></p>
-                              <option value="">Seleccione un origen...</option> 
-                              <option value="Nacional">Nacional</option> 
-                              <option value="Importado">Importado</option>
-                            </select><p></p>
-                            <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Por favor ingrese la descripción de producto ." rows="7"></textarea><p></p>
-                            <button type="submit" class="btn btn-outline-success">Guardar</button>
-                          </div>
-                      </div>
-                  </fieldset>
-              </form>
-          </div>
-      </div>
+  <!-- En este formulario se va a editar la información de los productos que estan en la base de datos del inventario -->
+  <div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <section class="col-xs-12 col-md-8">
+          <h2>Editar Productos</h2>
+        <!---Formulario para buscar productos de la base de datos -->
+          <form class="d-flex" method="get" action="php/consultar.php" name="busqueda">
+            <input name="barcode" class="form-control me-2" type="search" placeholder="Buscar por código de barras " aria-label="Search">
+            <input name="nombre" class="form-control me-2" type="search" placeholder="Buscar por nombre del producto " aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+          </form>
+        <!-- En este formulario se va a editar la información de los productos que estan en la base de datos del inventario -->                 
+          <form class="d-flex" method="post" action="php/actualizar.php" name="actualizarcampos">
+            <div class="col-xs-12 col-md-12 text-center" >
+              <input id="id" name="id" type="hidden" class="form-control" value="<?php echo $_POST['id']?>" required> <p></p>
+              <input id="barcode" name="barcode" type="text" placeholder="Codigo de Barras " class="form-control" value="<?php echo $_POST['barcode']?>" required> <p></p>
+              <input id="lname" name="nombre" type="text" placeholder="Nombre producto " class="form-control" value="<?php echo $_POST['nombreproducto']?>" required> <p></p>
+              <input id="date" name="fechacompra" type="date" placeholder="Fecha de compra " class="form-control clickable input-md" value= "<?php echo $_POST['fechacompra']?>" required><p></p>
+              <input id="compra" name="valorcompra" type="number" placeholder="Valor de Compra " class="form-control" value="<?php echo $_POST['valorcompra']?>" required> <p></p>
+              <input id="ganancia" name="ganancia" type="number" placeholder="Porcentaje de ganancia " class="form-control" value="<?php echo $_POST['ganancia']?>"><p></p>
+              <input id="cantidad" name="cantidad" type="number" placeholder="Cantidad de Productos " class="form-control" value="<?php echo $_POST['cantidad']?>"><p></p>
+              <input id="proveedor" name="proveedor" type="text" placeholder="Proveedor  de Productos " class="form-control" value="<?php echo $_POST['proveedor']?>"> <p></p>
+              <select name="origen" class="form-control" value="<?php echo $_POST['origen']?>" required>
+                <option value="">Seleccione un ítem</option> 
+                <option value="Nacional">Nacional</option> 
+                <option value="Importado">Importado</option>
+              </select><p></p>
+              <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Por favor ingrese la descripción de producto..." rows="7" value="<?php echo $_POST['descripcion']?>"></textarea><p></p>
+              <button type="submit" class="btn btn-outline-success">Guardar</button>
+            </div>
+        </form>
+      </section>
+    </div>
   </div>
-</div>
-
-
-
-  </body>
+</body>
 </html>
