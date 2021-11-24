@@ -79,14 +79,15 @@ if (mysqli_num_rows($result) > 0) {
             <input id="descripcion" name="descripcion" type="hidden" class="form-control" value = <?php echo $row["descripcion"]; ?>><p></p>
             <button class="btn btn-outline-primary" type="submit">Actualizar</button>
           </form>
+          <form action="eliminar.php">
+            <button class="btn btn-danger" type="submit">Eliminar</button>
+          </form>
         </div>
         
       </div>
     </div>
 
-
-
- <?php
+<?php
         
 //$myJSON = json_encode($row);
 
@@ -94,8 +95,6 @@ if (mysqli_num_rows($result) > 0) {
     }
 
 } else {
-
-
 
 ?>
 
@@ -125,8 +124,6 @@ if (mysqli_num_rows($result) > 0) {
       </div>
     </div>
     <?php
-
-
 }
 mysqli_close($conexion);
 ?>
