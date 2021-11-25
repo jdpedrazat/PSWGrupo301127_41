@@ -21,8 +21,16 @@
 
   </head>
   <body>
-    
-    <h1>PC Electronics</h1>
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-md-4">
+          <img src="../imagenes/Logo.png" width=100% height=auto>
+        </div>
+        <div class="col-md-8 align-self-center">
+          <h2>PC Electronics</h2>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -49,9 +57,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="../Inventarios/registro.html">Registrar</a></li>
-                <li><a class="dropdown-item  active" href="#">Editar</a></li>
-                <li><a class="dropdown-item" href="../Inventarios/inventario.html">Inventario</a></li>
-                <li><a class="dropdown-item" href="../Inventarios/eliminar.html">Eliminar</a></li>
+                <li><a class="dropdown-item  active" href="#">Consultar</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -66,8 +72,10 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrador</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="Administrador/crearbase.php">Crear Base</a></li>
-                <li><a class="dropdown-item" href="Administrador/creartablas.php">Crear Tablas</a></li>
+                <li><a class="dropdown-item" href="../Administrador/crearbase.php">Crear Base</a></li>
+                <li><a class="dropdown-item" href="../Administrador/creartablas.php">Crear Tablas</a></li>
+                <li><a class="dropdown-item" href="../Administrador/reportepdf.php">Generar Reporte</a></li>
+                <li><a class="dropdown-item" href="../Administrador/backups.php">Generar Backup</a></li>
                 </li>
               </ul>
             </li>
@@ -105,7 +113,7 @@
                 <option value="Importado">Importado</option>
               </select><p></p>
               <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Por favor ingrese la descripción de producto..." rows="7" value="<?php echo $_POST['descripcion']?>"></textarea><p></p>
-              <button type="submit" class="btn btn-outline-success">Guardar</button>
+              <button type="submit" class="btn btn-outline-success">Actualizar</button>
             </div>
         </form>
       </section>

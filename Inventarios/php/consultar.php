@@ -67,7 +67,7 @@ if (mysqli_num_rows($result) > 0) {
         </div>-->
         <div class="modal-footer">
           <form action="../editar.php" class="d-flex" method="post">
-            <input id="barcode" name="id" type="hidden" class="form-control" value = <?php echo $row["id"]; ?>><p></p>
+            <input id="barcode" name="id" type="hidden" class="form-control" value = <?php echo $row["id"]; ?>>
             <input id="barcode" name="barcode" type="hidden" class="form-control" value = <?php echo $row["codigobarras"]; ?>><p></p>
             <input id="nombreproducto" name="nombreproducto" type="hidden" class="form-control" value = <?php echo $row["nombre"]; ?>><p></p>
             <input id="fechacompra" name="fechacompra" type="hidden" class="form-control" value = <?php echo $row["fechaalta"]; ?>><p></p>
@@ -79,7 +79,8 @@ if (mysqli_num_rows($result) > 0) {
             <input id="descripcion" name="descripcion" type="hidden" class="form-control" value = <?php echo $row["descripcion"]; ?>><p></p>
             <button class="btn btn-outline-primary" type="submit">Actualizar</button>
           </form>
-          <form action="eliminar.php">
+          <form action="eliminar.php" class="d-flex" method="post">
+            <input id="barcode" name="id" type="hidden" class="form-control" value = <?php echo $row["id"]; ?>>
             <button class="btn btn-danger" type="submit">Eliminar</button>
           </form>
         </div>
